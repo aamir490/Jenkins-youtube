@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+    environment {
+        name = 'mark'
+    }
+    parameters {
+        
+        choice(name: 'city', choices: ['banglore','delhi','malegaon'], description: "")
+    }
+
+    stages {
+        stage('Continue ?') {
+            input {
+                message "are you sure about that ?"
+                ok "we should.."
+            }
+            steps {
+                sh 'echo "${BUILD_ID}"'
+                sh 'echo "${name}"'
+                sh 'ls'
+                sh 'pwd'
+                sh 'date'
+                sh 'ls -l'
+            }
+        }
+    }
+}
