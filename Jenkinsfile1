@@ -7,7 +7,7 @@ pipeline{
             }
             
         }
-        stage("mark messege"){
+        stage("saniya messege"){
             steps{
                 echo 'this is version8.ok send me  next vb'
             }
